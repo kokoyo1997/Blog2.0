@@ -9,27 +9,27 @@ function Main(){
     return (
         <div className="flex flex-grow box-border">
             <Switch>
-                <Route path={["/photos","/articles","/article"]}>
+                <Route path={[`${process.env.PUBLIC_URL}/photos`,`${process.env.PUBLIC_URL}/articles`,`${process.env.PUBLIC_URL}/article`]}>
                     <ContentList />
                 </Route>
 
-                <Route path="/search">
+                <Route path={`${process.env.PUBLIC_URL}/search`}>
                     <Search />
                 </Route>
 
-                <Route path="/todo">
+                <Route path={`${process.env.PUBLIC_URL}/todo`}>
                     <Todo />
                 </Route>
 
-                <Route path="/games">
+                <Route path={`${process.env.PUBLIC_URL}/games`}>
                     <Game />
                 </Route>
 
-                <Route path="/about">
+                <Route path={`${process.env.PUBLIC_URL}/about`}>
                     <About />
                 </Route>
 
-                <Route path="/">
+                <Route path={`${process.env.PUBLIC_URL}`}>
                     <Home />
                 </Route>
                 

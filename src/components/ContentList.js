@@ -10,15 +10,15 @@ function ContentList(){
     return (
         <div className="flex container mx-auto flex-grow my-6 space-x-10 px-4">
             <Switch>
-                <Route path="/photos">
+                <Route path={`${process.env.PUBLIC_URL}/photos`}>
                     <Photos />
                     <Sidebar />
                 </Route>
-                <Route path="/articles">
+                <Route path={`${process.env.PUBLIC_URL}/articles`}>
                     <Articles />
                     <Sidebar />
                 </Route>
-                <Route path="/article/:id">
+                <Route path={`${process.env.PUBLIC_URL}/article/:id`}>
                     <Article />
                     <Sidebar />
                 </Route>
