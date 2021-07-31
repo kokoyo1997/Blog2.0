@@ -2,7 +2,7 @@
   "name": "blog_2.0",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://xxx.github.io",
+  "homepage": "https://kokoyo1997.github.io/blog",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@tailwindcss/postcss7-compat": "^2.2.7",
