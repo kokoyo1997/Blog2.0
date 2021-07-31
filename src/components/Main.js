@@ -5,31 +5,32 @@ import Todo from "./Todo";
 import Game from "./Game";
 import About from "./About";
 import Home from "./Home";
+import {REPO} from "../assets/common";
 function Main(){
     return (
         <div className="flex flex-grow box-border">
             <Switch>
-                <Route path={[`${process.env.PUBLIC_URL}/photos`,`${process.env.PUBLIC_URL}/articles`,`${process.env.PUBLIC_URL}/article`]}>
+                <Route path={[`${REPO}/photos`,`${REPO}/articles`,`${REPO}/article`]}>
                     <ContentList />
                 </Route>
 
-                <Route path={`${process.env.PUBLIC_URL}/search`}>
+                <Route path={`${REPO}/search`}>
                     <Search />
                 </Route>
 
-                <Route path={`${process.env.PUBLIC_URL}/todo`}>
+                <Route path={`${REPO}/todo`}>
                     <Todo />
                 </Route>
 
-                <Route path={`${process.env.PUBLIC_URL}/games`}>
+                <Route path={`${REPO}/games`}>
                     <Game />
                 </Route>
 
-                <Route path={`${process.env.PUBLIC_URL}/about`}>
+                <Route path={`${REPO}/about`}>
                     <About />
                 </Route>
 
-                <Route path={`${process.env.PUBLIC_URL}`}>
+                <Route path={`${REPO}`}>
                     <Home />
                 </Route>
                 

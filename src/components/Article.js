@@ -3,6 +3,7 @@ import articles from "../assets/articles";
 import ReactMarkdown from 'react-markdown';
 import { useState } from "react";
 import 'github-markdown-css';
+import { REPO } from "../assets/common";
 
 function Article(){
     const [content,setContent]=useState("Loading...");
@@ -16,7 +17,7 @@ function Article(){
     
     cur_article=cur_article[0];
 
-    fetch(process.env.PUBLIC_URL+cur_article.content).then(res=>res.text())
+    fetch(REPO+cur_article.content).then(res=>res.text())
         .then(text=>setContent(text))
 
     return (
@@ -29,8 +30,8 @@ function Article(){
                     <p><span className="iconfont mr-1 align-middle">&#xe82c;</span>3天前</p>
                 </div>
                 <div className="flex justify-between py-2 border-gray-300 border-t border-b text-gray-500">
-                    <Link to={`${process.env.PUBLIC_URL}/article/${cur_article.prevId?cur_article.prevId:cur_article.id}`}>上一篇</Link>
-                    <Link to={`${process.env.PUBLIC_URL}/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`}>下一篇</Link>
+                    <Link to={`${REPO}/article/${cur_article.prevId?cur_article.prevId:cur_article.id}`}>上一篇</Link>
+                    <Link to={`${REPO}/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`}>下一篇</Link>
                 </div>
             </div>
             <div className="my-6 md:my-10 font-light indent-sm text-gray-700 leading-loose md:font-normal markdown-body">

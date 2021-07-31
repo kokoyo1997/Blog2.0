@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-
+import {REPO} from "../assets/common";
 const navList=[
     {
         key:1,
@@ -41,12 +41,12 @@ function Nav(){
 
     const location=useLocation();
     const pathname=location.pathname;
-    let navShow=pathname===process.env.PUBLIC_URL||pathname===`${process.env.PUBLIC_URL}/index.html`;
+    let navShow=pathname===REPO||pathname===`${REPO}/index.html`;
     return (
         <nav className={`${navShow?"":"hidden"} md:block bg-gray-50`}>
             <div className="flex flex-col justify-around items-center text-gray-500 space-y-3 py-3 md:py-6 md:flex-row md:space-y-0 container mx-auto ">
             {navList.map((ele,idx)=>(
-                <Link to={process.env.PUBLIC_URL+ele.url} className={`flex space-x-2 hover:text-red-700 border-b-2 md:border-b-0 ${ele.url===pathname?"text-red-700":""}`} key={ele.key}>
+                <Link to={REPO+ele.url} className={`flex space-x-2 hover:text-red-700 border-b-2 md:border-b-0 ${ele.url===pathname?"text-red-700":""}`} key={ele.key}>
                     <span className="iconfont text-4xl font-light" dangerouslySetInnerHTML={{__html:ele.icon}}></span>
                     <p className="flex flex-col justify-center">
                         <span>{ele.nav_name}</span>
