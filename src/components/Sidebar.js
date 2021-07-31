@@ -12,7 +12,7 @@ function Sidebar(){
                 <ul className="flex flex-col space-y-4 divide-y divide-gray-300 w-full">
                     <li className="pt-4">
                         <a href="#" className="flex space-x-4">
-                            <img src="/uploads/lasted1.jpg" alt="pic" className="w-24 h-16 object-cover rounded-md"/>
+                            <img src={process.env.PUBLIC_URL+"/uploads/lasted1.jpg"} alt="pic" className="w-24 h-16 object-cover rounded-md"/>
                             <p className="flex flex-col justify-around">
                                 <span className="text-gray-500">Onmyoji</span>
                                 <span className="text-xs text-gray-400">1天前</span>
@@ -21,7 +21,7 @@ function Sidebar(){
                     </li>
                     <li className="pt-4">
                         <a href="#" className="flex space-x-4">
-                            <img src="/uploads/lasted1.jpg" alt="pic" className="w-24 h-16 object-cover rounded-md"/>
+                            <img src={process.env.PUBLIC_URL+"/uploads/lasted1.jpg"} alt="pic" className="w-24 h-16 object-cover rounded-md"/>
                             <p className="flex flex-col justify-around">
                                 <span className="text-gray-500">Onmyoji</span>
                                 <span className="text-xs text-gray-400">1天前</span>

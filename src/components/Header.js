@@ -33,7 +33,7 @@ function Header() {
     <div>
     <header className="relative w-full px-4 py-2 bg-gray-600 flex flex-row justify-between items-center text-gray-200 font-light">
       <div className="z-40 self-start">
-        <h1><a href="/index.html" className="text-zero block w-10 h-10 md:w-10 md:h-10" style={{background:"url('/img/logo.png')",backgroundSize:"cover"}}>k</a></h1>
+        <h1><a href="/index.html" className="text-zero block w-10 h-10 md:w-10 md:h-10" style={{backgroundImage:`url('${process.env.PUBLIC_URL}/img/logo2.png')`,backgroundSize:"cover"}}>k</a></h1>
       </div>
       
       <div className="flex flex-col justify-end space-y-6 text-right bg-gray-600 md:space-y-0">

@@ -66,7 +66,7 @@ function Photos(){
                             {zone.lists.map(ele=>(
                                 <li className="mr-4 mb-4" key={ele.id}>
                                     <a href={ele.url} className="space-y-2">
-                                        <img src={ele.path} className="w-44 border-dotted border-2 border-gray-400" alt={ele.title}></img>
+                                        <img src={process.env.PUBLIC_URL+ele.path} className="w-44 border-dotted border-2 border-gray-400" alt={ele.title}></img>
                                         <p className="text-center text-gray-500 text-sm">「{ele.title}」</p>
                                     </a>
                                 </li>

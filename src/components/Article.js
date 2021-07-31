@@ -16,7 +16,7 @@ function Article(){
     
     cur_article=cur_article[0];
 
-    fetch(cur_article.content).then(res=>res.text())
+    fetch(process.env.PUBLIC_URL+cur_article.content).then(res=>res.text())
         .then(text=>setContent(text))
 
     return (
