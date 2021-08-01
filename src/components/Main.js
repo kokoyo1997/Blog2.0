@@ -10,27 +10,27 @@ function Main(){
     return (
         <div className="flex flex-grow box-border">
             <Switch>
-                <Route path={[`${REPO}/photos`,`${REPO}/articles`,`${REPO}/article`]}>
+                <Route path={[`/photos`,`/articles`,`/article`]}>
                     <ContentList />
                 </Route>
 
-                <Route path={`${REPO}/search`}>
+                <Route path={`/search`}>
                     <Search />
                 </Route>
 
-                <Route path={`${REPO}/todo`}>
+                <Route path={`/todo`}>
                     <Todo />
                 </Route>
 
-                <Route path={`${REPO}/games`}>
+                <Route path={`/games`}>
                     <Game />
                 </Route>
 
-                <Route path={`${REPO}/about`}>
+                <Route path={`/about`}>
                     <About />
                 </Route>
 
-                <Route path={`${REPO}`}>
+                <Route path={`/`}>
                     <Home />
                 </Route>
                 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Nav from "./Nav";
 import {REPO} from "../assets/common";
+import { Link } from "react-router-dom";
 function Header() {
   const [menuShow,setMenuShow]=useState(false);
   
@@ -41,9 +42,9 @@ function Header() {
         <button type="button" className={(menuShow?"mt-2 text-red-300":"")+" md:hidden text-right hover:text-red-300" } onClick={()=>toggleMenu()}><span className="iconfont">&#xe827;</span></button>
         {menuShow&&
         <div className="flex flex-col space-y-4 text-right tracking-widest bg-gray-600 md:flex md:flex-row md:static md:space-x-8 md:space-y-0 md:tracking-wide">
-          <a href={`/index.html`} className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe7f9;</span>HOME</a>
-          <a href={`/todo`} className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe804;</span>TODO</a>
-          <a href={`/about`} className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe81d;</span>ABOUT</a>
+          <Link to={`/index.html`} className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe7f9;</span>HOME</Link>
+          <Link to={`/todo`} className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe804;</span>TODO</Link>
+          <Link to={`/about`} className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe81d;</span>ABOUT</Link>
           {/* <a href="/login" className="cursor-pointer hover:text-red-300"><span className="iconfont pr-1">&#xe816;</span>LOGIN</a> */}
         </div>
         }

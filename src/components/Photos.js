@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { REPO } from "../assets/common";
 
 const photoLists=[
@@ -67,10 +68,10 @@ function Photos(){
                         <ul className="flex flex-wrap">
                             {zone.lists.map(ele=>(
                                 <li className="mr-4 mb-4" key={ele.id}>
-                                    <a href={ele.url} className="space-y-2">
+                                    <Link to={ele.url} className="space-y-2">
                                         <img src={REPO+ele.path} className="w-44 border-dotted border-2 border-gray-400" alt={ele.title}></img>
                                         <p className="text-center text-gray-500 text-sm">「{ele.title}」</p>
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                             

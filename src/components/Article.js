@@ -30,8 +30,8 @@ function Article(){
                     <p><span className="iconfont mr-1 align-middle">&#xe82c;</span>3天前</p>
                 </div>
                 <div className="flex justify-between py-2 border-gray-300 border-t border-b text-gray-500">
-                    <Link to={`${REPO}/article/${cur_article.prevId?cur_article.prevId:cur_article.id}`}>上一篇</Link>
-                    <Link to={`${REPO}/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`}>下一篇</Link>
+                    <Link to={`/article/${cur_article.prevId?cur_article.prevId:cur_article.id}`}>上一篇</Link>
+                    <Link to={`/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`}>下一篇</Link>
                 </div>
             </div>
             <div className="my-6 md:my-10 font-light indent-sm text-gray-700 leading-loose md:font-normal markdown-body">
