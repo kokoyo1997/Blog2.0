@@ -41,7 +41,6 @@ function Nav(){
 
     const location=useLocation();
     const pathname=location.pathname;
-    console.log(pathname);
     let navShow=pathname==="/"||pathname===`/index.html`;
     return (
         <nav className={`${navShow?"":"hidden"} md:block bg-gray-50`}>
