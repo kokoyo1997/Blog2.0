@@ -1,1 +1,1 @@
-export const REPO="Blog2.0";
+export const REPO="/Blog2.0";
