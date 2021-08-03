@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import articles from "../assets/articles";
+import { REPO } from "../assets/common";
 function Articles(){
     return (
         <div className="flex-1 box-border ">
             <ul className="flex flex-col mt-6 space-y-14 mb-10 md:mt-10 md:space-y-20">
                 {articles.map((ele)=>(
                     <li className="flex space-x-4" key={ele.id}>
-                        <img src={ele.imgUrl} alt={ele.title} className="hidden md:block rounded-lg"/>
+                        <img src={REPO+ele.imgUrl} alt={ele.title} className="hidden md:block rounded-lg"/>
                         <Link className="space-y-4" to={`/article/${ele.id}`}>
                             <div className="space-y-2 pb-1 border-b border-gray-300">
                                 <h3 className="text-xl font-bold ">「{ele.title}」</h3>

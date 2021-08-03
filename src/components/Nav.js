@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-
+import {REPO} from "../assets/common";
 const navList=[
     {
         key:1,
@@ -41,7 +41,7 @@ function Nav(){
 
     const location=useLocation();
     const pathname=location.pathname;
-    let navShow=pathname==="/"||pathname==="/index.html";
+    let navShow=pathname==="/"||pathname===`/index.html`;
     return (
         <nav className={`${navShow?"":"hidden"} md:block bg-gray-50`}>
             <div className="flex flex-col justify-around items-center text-gray-500 space-y-3 py-3 md:py-6 md:flex-row md:space-y-0 container mx-auto ">
