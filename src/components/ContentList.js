@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import {Switch,Route} from 'react-router-dom';
 import Articles from "./Articles";
 import Article from "./Article";
-import {REPO} from "../assets/common"
+// import {REPO} from "../assets/common"
 
 function ContentList(){
     
