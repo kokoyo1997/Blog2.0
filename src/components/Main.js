@@ -10,7 +10,7 @@ function Main(){
     return (
         <div className="flex flex-grow box-border">
             <Switch>
-                <Route path={[`/photos`,`/articles`,`/article`]}>
+                <Route path={[`/photos`,`/articles`,`/article`,`/reads`,`/read`]}>
                     <ContentList />
                 </Route>
 

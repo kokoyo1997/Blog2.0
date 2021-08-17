@@ -3,6 +3,9 @@ import Sidebar from "./Sidebar";
 import {Switch,Route} from 'react-router-dom';
 import Articles from "./Articles";
 import Article from "./Article";
+import Reads from "./Reads";
+import Read from "./Read";
+import { SLOGAN } from "../assets/common";
 // import {REPO} from "../assets/common"
 
 function ContentList(){
@@ -12,15 +15,23 @@ function ContentList(){
             <Switch>
                 <Route path={`/photos`}>
                     <Photos />
-                    <Sidebar />
+                    <Sidebar slogan={SLOGAN.PHOTO}/>
                 </Route>
                 <Route path={`/articles`}>
                     <Articles />
-                    <Sidebar />
+                    <Sidebar slogan={SLOGAN.ARTICLE}/>
                 </Route>
                 <Route path={`/article/:id`}>
                     <Article />
-                    <Sidebar />
+                    <Sidebar slogan={SLOGAN.ARTICLE}/>
+                </Route>
+                <Route path={`/reads`}>
+                    <Reads />
+                    <Sidebar slogan={SLOGAN.READ}/>
+                </Route>
+                <Route path={`/read/:id`}>
+                    <Read />
+                    <Sidebar slogan={SLOGAN.READ}/>
                 </Route>
             </Switch>
         </div>

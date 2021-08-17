@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { REPO } from "../assets/common";
 
-function Sidebar(){
+function Sidebar({slogan}){
     return (
         <div className="w-60 mb-6 mt-8 hidden lg:block self-start">
             <div className="text-gray-400 font-light mb-6">
-                <p className="leading-8">我仍在不断攀登</p>
-                <p className="leading-8">自从我诞生</p>
-                <p className="leading-8">云雾在不断翻腾</p>
-                <p className="leading-8">还未见山顶</p>
+                {slogan.map((ele,idx)=>(
+                    <p className="leading-8" key={idx}>{ele}</p>
+                ))}
+                
             </div>
             <div>
                 <h3 className="pl-2 border-l-4 border-gray-700 text-gray-700 text-lg font-bold mb-2">最新动态</h3>

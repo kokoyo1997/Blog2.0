@@ -8,6 +8,11 @@ const gameLists=[
         id:2,
         title:"Snake",
         url:"https://kokoyo1997.github.io/snake-react"
+    },
+    {
+        id:3,
+        title:"2048",
+        url:"https://kokoyo1997.github.io/2048-react"
     }
 ];
 
@@ -49,7 +54,7 @@ const links=[
         id:2,
         name:"学习网站",
         lists:resourceLinks
-    }
+    },
 ]
 
 function Game(){

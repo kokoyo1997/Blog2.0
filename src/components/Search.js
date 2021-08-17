@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import articles from "../assets/articles";
+import {articles,reads} from "../assets/articles";
 
 const search=(target)=>{
     let res=[];
@@ -13,6 +13,16 @@ const search=(target)=>{
             url:`/article/${ele.id}`
         });
     });
+
+    //找read里面标题含有关键词的
+    reads.forEach((ele)=>{
+        if(ele.title.includes(target)) res.push({
+            path:"阅读>",
+            title:ele.title,
+            url:`/read/${ele.id}`
+        });
+    });
+
     return res;
 }
 

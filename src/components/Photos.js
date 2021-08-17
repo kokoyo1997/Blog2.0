@@ -1,63 +1,7 @@
 import { Link } from "react-router-dom";
 import { REPO } from "../assets/common";
+import {photoLists} from "../assets/photos";
 
-const photoLists=[
-    {
-        id:1,
-        name:"阴阳师Onmyoji",
-        lists:[
-            {
-                id:1,
-                title:"大天狗",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-            {
-                id:2,
-                title:"大天狗",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-            {
-                id:3,
-                title:"大天狗",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-            {
-                id:4,
-                title:"大天狗",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-        ]
-    },
-    {   
-        id:2,
-        name:"海贼王Onepiece",
-        lists:[
-            {
-                id:1,
-                title:"罗诺诺亚·索隆",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-            {
-                id:2,
-                title:"罗诺诺亚·索隆",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-            {
-                id:3,
-                title:"罗诺诺亚·索隆",
-                path:"/uploads/lasted1.jpg",
-                url:"/"
-            },
-        ]
-
-    }
-];
 function Photos(){
     return (
         <div className="flex-1">
