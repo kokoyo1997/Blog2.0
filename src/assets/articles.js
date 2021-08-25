@@ -54,7 +54,7 @@ export const reads=[
         id:1,
         title:"关于秋招",
         content:"/reads/关于秋招.md",
-        abstract:"疼痛青春文学",
+        abstract:"疼痛青春文学/面包会有的",
         imgUrl:"/uploads/reads/IMG_20200919_155322.jpg",
         timestamp:"2021/08/25",
         tags:"碎碎念",
@@ -65,7 +65,8 @@ export const reads=[
     },
 ];
 
-export const latest=[
+// export const latest=[
+//     articles.length-1,
 
-];
+// ];
 

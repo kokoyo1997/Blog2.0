@@ -27,16 +27,22 @@ function Read(){
     cur_article=cur_article[0];
     let now=new Date(),timestamp=new Date(cur_article.timestamp);
     let timeDelta=Math.floor((now.getTime()-timestamp.getTime())/(24*60*60*1000));
-    
+    let timeStr;
+    if(timeDelta<10){
+        if(timeDelta===0) timeStr="今天";
+        else timeStr=`${timeDelta}天前`
+    }else{
+        timeStr=timestamp;
+    }
 
     return (
         <div className="flex-1 box-border">
             <div>
                 <h3 className="text-3xl font-medium tracking-wider mb-4">{cur_article.title}</h3>
                 <div className="flex space-x-6 text-gray-500 font-light text-xs md:text-base mb-2">
-                    <p><span className="iconfont mr-1 align-middle">&#xe7f1;</span>{cur_article.consume}min</p>
-                    <p><span className="iconfont mr-1 align-middle">&#xe845;</span>{content.length}</p>
-                    <p><span className="iconfont mr-1 align-middle">&#xe82c;</span>{timeDelta}天前</p>
+                    <p><span className="iconfont mr-1 align-top">&#xe7f1;</span>{cur_article.consume}min</p>
+                    <p><span className="iconfont mr-1 align-top">&#xe845;</span>{content.length}</p>
+                    <p><span className="iconfont mr-1 align-top">&#xe82c;</span>{timeStr}</p>
                 </div>
                 <div className="flex justify-between py-2 border-gray-300 border-t border-b text-gray-500">
                     <Link to={`/read/${cur_article.prevId?cur_article.prevId:cur_article.id}`}>上一篇</Link>
