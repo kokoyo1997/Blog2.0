@@ -52,15 +52,15 @@ export const articles=[
 export const reads=[
     {
         id:1,
-        title:"计算机网络(1)",
-        content:"/articles/base.md",
-        abstract:"1.OSI七层模型；2.TCP/IP模型；3.DNS解析。",
-        imgUrl:"/uploads/kuande.jpg",
-        timestamp:"2021/08/06",
-        tags:"测试",
-        consume:"3",
-        words:651,
-        nextId:2,
+        title:"关于秋招",
+        content:"/reads/关于秋招.md",
+        abstract:"疼痛青春文学",
+        imgUrl:"/uploads/reads/IMG_20200919_155322.jpg",
+        timestamp:"2021/08/25",
+        tags:"碎碎念",
+        consume:"5",
+        words:1034,
+        nextId:null,
         prevId:null
     },
 ];

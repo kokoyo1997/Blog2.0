@@ -1,37 +1,6 @@
 import {useEffect, useState} from 'react';
 import { REPO } from '../assets/common';
-const imageLists=[
-    {
-        id:1,
-        title:"yys1",
-        path:"/uploads/home1.jpg"
-        
-    },
-    {
-        id:2,
-        title:"yys2",
-        path:"/uploads/home2.jpg"
-        
-    },
-    {
-        id:3,
-        title:"yys3",
-        path:"/uploads/home3.jpg"
-        
-    },
-    {
-        id:4,
-        title:"yys4",
-        path:"/uploads/home4.jpg"
-        
-    },
-    {
-        id:5,
-        title:"yys5",
-        path:"/uploads/home5.jpg"
-        
-    }
-]
+import { imageLists } from '../assets/photos';
 function Home(){
     const [curIdx,setCurIdx]=useState(0);
 
@@ -40,6 +9,9 @@ function Home(){
     }
     const handleNext=()=>{
         setCurIdx(prev=>(prev+1)%imageLists.length);
+    }
+    const handleToSome=(idx)=>{
+        setCurIdx(idx);
     }
 
     useEffect(()=>{
@@ -60,7 +32,7 @@ function Home(){
             <div className="absolute inset-x-0 bottom-0">
                 <ul className="flex justify-center space-x-2 pb-4">
                     {imageLists.map((ele,idx)=>(
-                        <li key={idx} className={`w-2 h-2 bg-gray-50 rounded-full ${idx===curIdx?"opacity-100":"opacity-40"}`}></li>
+                        <li key={idx} onClick={()=>handleToSome(idx)} className={`w-2 h-2 bg-gray-50 rounded-full cursor-pointer hover:bg-gray-300 ${idx===curIdx?"opacity-100":"opacity-40"}`}></li>
                     ))}
                 </ul>
             </div>

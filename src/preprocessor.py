@@ -23,4 +23,5 @@ def preprocessor(file):
         content[i]=content[i].rstrip('\n')
     print(content)
 
-preprocessor("blog_2.0/public/articles/tips.md")
+# preprocessor("blog_2.0/public/articles/tips.md")
+print("hello")
