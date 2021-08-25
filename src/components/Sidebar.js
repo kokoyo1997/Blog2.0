@@ -16,7 +16,7 @@ function Sidebar({slogan}){
                     
                     <li className="pt-4">
                         <Link to={`/article/${articles[articles.length-1].id}`} className="flex space-x-4">
-                            <img src={REPO+"/uploads/lasted1.jpg"} alt="pic" className="w-24 h-16 object-cover rounded-md"/>
+                            <img src={REPO+"/img/cover.jpeg"} alt="pic" className="w-24 h-16 object-cover rounded-md"/>
                             <p className="flex flex-col justify-around">
                                 <span className="text-gray-500">{articles[articles.length-1].title}</span>
                                 <span className="text-xs text-gray-400">{articles[articles.length-1].timestamp}</span>
