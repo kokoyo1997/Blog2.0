@@ -2,17 +2,22 @@ import { Link } from "react-router-dom";
 import {articles} from "../assets/articles";
 import Pagination from "./Pagination";
 import { useState } from "react";
+const re_articles=[...articles].reverse();
 function Articles(){
     const [page,setPage]=useState(1);   
     
     const handlePage=(page_)=>{
+        if(page!==page_) window.scrollTo(0,0);
         setPage(page_);
+        
     }
+
+    let cur_articles=re_articles.slice((page-1)*5,Math.min(re_articles.length,page*5));
 
     return (
         <div className="flex-1 box-border relative">
             <ul className="flex flex-col mt-6 space-y-14 mb-20 md:mt-10 md:space-y-20">
-                {articles.map((ele)=>(
+                {cur_articles.map((ele)=>(
                     <li className="flex space-x-4" key={ele.id}>
                         <Link className="space-y-4" to={`/article/${ele.id}`}>
                             <div className="space-y-2 pb-1 border-b border-gray-300">
@@ -30,7 +35,6 @@ function Articles(){
                 
             </ul>
             <Pagination total={Math.ceil(articles.length/5)} current={page} handlePage={handlePage}/>
-            {/* <Pagination total={15} current={page} handlePage={handlePage}/> */}
         </div>
     )
 }

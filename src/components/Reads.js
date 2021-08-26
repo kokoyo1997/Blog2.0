@@ -3,17 +3,21 @@ import {reads} from "../assets/articles";
 import { REPO } from "../assets/common";
 import Pagination from "./Pagination";
 import { useState } from "react";
+const re_articles=[...reads].reverse();
 function Reads(){
     const [page,setPage]=useState(1);   
     
     const handlePage=(page_)=>{
+        if(page!==page_) window.scrollTo(0,0);
         setPage(page_);
     }
+
+    let cur_articles=re_articles.slice((page-1)*5,Math.min(re_articles.length,page*5));
 
     return (
         <div className="flex-1 box-border relative">
             <ul className="flex flex-col mt-6 space-y-14 mb-20 md:mt-10 md:space-y-20">
-                {reads.map((ele)=>(
+                {cur_articles.map((ele)=>(
                     <li className="flex space-x-4" key={ele.id}>
                         <img src={REPO+ele.imgUrl} alt={ele.title} className="hidden md:block rounded-lg w-1/5"/>
                         <Link className="space-y-4" to={`/read/${ele.id}`}>
