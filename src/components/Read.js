@@ -9,7 +9,7 @@ function Read(){
     const [content,setContent]=useState("Loading...");
     const params=useParams();
     
-    let cur_article=reads.filter((ele)=>ele.id==params.id);
+    let cur_article=reads.filter((ele)=>ele.id===parseInt(params.id));
     
     useEffect(()=>{
         if(!Array.isArray(cur_article)){

@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import {reads} from "../assets/articles";
 import { REPO } from "../assets/common";
-
+import Pagination from "./Pagination";
+import { useState } from "react";
 function Reads(){
+    const [page,setPage]=useState(1);   
+    
+    const handlePage=(page_)=>{
+        setPage(page_);
+    }
+
     return (
-        <div className="flex-1 box-border ">
-            <ul className="flex flex-col mt-6 space-y-14 mb-10 md:mt-10 md:space-y-20">
+        <div className="flex-1 box-border relative">
+            <ul className="flex flex-col mt-6 space-y-14 mb-20 md:mt-10 md:space-y-20">
                 {reads.map((ele)=>(
                     <li className="flex space-x-4" key={ele.id}>
                         <img src={REPO+ele.imgUrl} alt={ele.title} className="hidden md:block rounded-lg w-1/5"/>
@@ -24,6 +31,7 @@ function Reads(){
                 ))}
                 
             </ul>
+            <Pagination total={Math.ceil(reads.length/5)} current={page} handlePage={handlePage}/>
         </div>
     )
 }

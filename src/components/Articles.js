@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import {articles} from "../assets/articles";
-
+import Pagination from "./Pagination";
+import { useState } from "react";
 function Articles(){
+    const [page,setPage]=useState(1);   
+    
+    const handlePage=(page_)=>{
+        setPage(page_);
+    }
+
     return (
-        <div className="flex-1 box-border ">
-            <ul className="flex flex-col mt-6 space-y-14 mb-10 md:mt-10 md:space-y-20">
+        <div className="flex-1 box-border relative">
+            <ul className="flex flex-col mt-6 space-y-14 mb-20 md:mt-10 md:space-y-20">
                 {articles.map((ele)=>(
                     <li className="flex space-x-4" key={ele.id}>
                         <Link className="space-y-4" to={`/article/${ele.id}`}>
@@ -22,6 +29,8 @@ function Articles(){
                 ))}
                 
             </ul>
+            <Pagination total={Math.ceil(articles.length/5)} current={page} handlePage={handlePage}/>
+            {/* <Pagination total={15} current={page} handlePage={handlePage}/> */}
         </div>
     )
 }
