@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { REPO } from "../assets/common";
 import { articles,reads } from "../assets/articles";
+import Calendar from "./Calendar";
 function Sidebar({slogan}){
     return (
         <div className="w-60 mb-6 mt-8 hidden lg:block self-start">
@@ -10,6 +11,7 @@ function Sidebar({slogan}){
                 ))}
                 
             </div>
+            <Calendar />
             <div>
                 <h3 className="pl-2 border-l-4 border-gray-700 text-gray-700 text-lg font-bold mb-2">最新动态</h3>
                 <ul className="flex flex-col space-y-4 divide-y divide-gray-300 w-full">

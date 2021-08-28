@@ -5,12 +5,15 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
       extend: {
-        backgourndImage:theme=>({
-          'klogo':"url('/img/k.png')"
+        backgroundImage:theme=>({
+          
+          'imgmask':"url('assets/img/bka.svg')",
         }),
         padding:{
             'full':'100%',
-            '1/2':'50%'
+            '1/2':'50%',
+            '3/4':'75%',
+            '3/10':"30%",
         },
         fontSize:{
           'zero':'0',

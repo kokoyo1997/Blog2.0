@@ -114,7 +114,7 @@ export const reads=[
         id:1,
         title:"关于秋招",
         content:"/reads/关于秋招.md",
-        abstract:"疼痛青春文学/面包会有的",
+        abstract:"面包会有的/从2021.6.9项目正式验收结题，端午回家以及出差一周，2021/6/19回到学校，开始静下心认真备战秋招。",
         imgUrl:"/uploads/reads/IMG_20200919_155322.jpg",
         timestamp:"2021/08/25",
         tags:"碎碎念",
