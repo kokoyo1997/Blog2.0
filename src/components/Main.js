@@ -5,6 +5,7 @@ import Todo from "./Todo";
 import Game from "./Game";
 import About from "./About";
 import Home from "./Home";
+import Quotation from "./Quotation";
 // import {REPO} from "../assets/common";
 function Main(){
     return (
@@ -13,7 +14,9 @@ function Main(){
                 <Route path={[`/photos`,`/articles`,`/article`,`/reads`,`/read`]}>
                     <ContentList />
                 </Route>
-
+                <Route path={`/quotation`}>
+                    <Quotation />
+                </Route>
                 <Route path={`/search`}>
                     <Search />
                 </Route>

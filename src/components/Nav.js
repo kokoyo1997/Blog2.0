@@ -24,18 +24,25 @@ const navList=[
     },
     {
         key:4,
+        nav_name:"树洞",
+        nav_name_en:"Quotation",
+        url:"/quotation",
+        icon:"&#xe837;"
+    },
+    {
+        key:5,
         nav_name:"游戏",
         nav_name_en:"Games",
         url:"/games",
         icon:"&#xe807;"
     },
     {
-        key:5,
+        key:6,
         nav_name:"搜索",
         nav_name_en:"Search",
         url:"/search",
         icon:"&#xe80e;"
-    },
+    }
 ]
 function Nav(){
 
