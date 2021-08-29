@@ -6,7 +6,7 @@ module.exports = {
     theme: {
       extend: {
         backgroundImage:theme=>({
-          
+          'imgpad':"url('assets/img/cover.jpeg')",
           'imgmask':"url('assets/img/bka.svg')",
         }),
         padding:{

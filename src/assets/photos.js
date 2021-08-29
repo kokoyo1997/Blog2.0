@@ -48,6 +48,12 @@ export const photoLists = [{
                 path: "/uploads/lasted1.jpg",
                 url: "/"
             },
+            {
+                id: 4,
+                title: "123",
+                path:"/uploads/cover.jpeg",
+                url:"/"
+            }
         ]
 
     }
