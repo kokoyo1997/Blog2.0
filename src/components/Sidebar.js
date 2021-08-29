@@ -11,7 +11,7 @@ function Sidebar({slogan}){
                 ))}
                 
             </div>
-            <Calendar />
+            
             <div>
                 <h3 className="pl-2 border-l-4 border-gray-700 text-gray-700 text-lg font-bold mb-2">最新动态</h3>
                 <ul className="flex flex-col space-y-4 divide-y divide-gray-300 w-full">
@@ -37,6 +37,7 @@ function Sidebar({slogan}){
                     
                 </ul>
             </div>
+            {/* <Calendar /> */}
         </div>
     )
 }

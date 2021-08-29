@@ -18,7 +18,7 @@ function Articles(){
         <div className="flex-1 box-border relative">
             <ul className="flex flex-col mt-6 space-y-4 mb-20 md:mt-10 md:space-y-6">
                 {cur_articles.map((ele)=>(
-                    <li className="flex space-x-4 bg-gray-100 shadow-sm py-5 px-2 rounded-r-lg" key={ele.id}>
+                    <li className="flex space-x-4 bg-gray-100 shadow-sm py-5 px-4 rounded-r-lg" key={ele.id}>
                         <Link className="space-y-4" to={`/article/${ele.id}`}>
                             <div className="space-y-4 pb-2 border-b border-gray-300">
                                 <h3 className="text-xl font-bold ">「{ele.title}」</h3>

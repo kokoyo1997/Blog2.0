@@ -97,9 +97,9 @@ export const articles=[
     },
     {
         id:9,
-        title:"计算机网络(9)",
-        content:"/articles/url2render.md",
-        abstract:"1.DNS解析；2.TCP三次握手；3.数据传输；4.接收数据渲染",
+        title:"算法trick",
+        content:"/articles/tips.md",
+        abstract:"常用的一些算法框架:/",
         timestamp:"2021/06/06",
         tags:"测试",
         consume:"3",
@@ -118,11 +118,24 @@ export const reads=[
         imgUrl:"/uploads/reads/IMG_20200919_155322.jpg",
         timestamp:"2021/08/25",
         tags:"碎碎念",
-        consume:"5",
+        consume:"3",
         words:1034,
         nextId:null,
-        prevId:null
+        prevId:2
     },
+    {
+        id:2,
+        title:"二十四岁的这一年",
+        content:"/reads/廿四的这一年.md",
+        abstract:"其实我的二十四岁还只过了不到一个月，写下这些只是为了填内容（不是），是想补上例行的每年总结，再对未来添上些希冀。",
+        imgUrl:"/uploads/reads/IMG_20210220_191724.jpg",
+        timestamp:"2021/08/29",
+        tags:"碎碎念",
+        consume:"5",
+        words:1034,
+        nextId:1,
+        prevId:null
+    }
 ];
 
 // export const latest=[

@@ -39,12 +39,12 @@ function Article(){
                     <p><span className="iconfont mr-1 align-middle">&#xe82c;</span>{timeDelta}天前</p>
                 </div>
                 <div className="flex justify-between py-2 border-gray-300 border-t border-b text-gray-500">
-                    <Link to={`/article/${cur_article.prevId?cur_article.prevId:cur_article.id}`}>上一篇</Link>
-                    <Link to={`/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`}>下一篇</Link>
+                    <Link to={`/article/${cur_article.prevId?cur_article.prevId:cur_article.id}`} className={`${cur_article.prevId?"":"cursor-not-allowed"}`}>上一篇</Link>
+                    <Link to={`/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`} className={`${cur_article.nextId?"":"cursor-not-allowed"}`}>下一篇</Link>
                 </div>
             </div>
-            <div className="my-6 md:my-10 font-light indent-sm text-gray-700 leading-loose md:font-normal markdown-body">
-                <ReactMarkdown children={content} />
+            <div className="my-6 md:my-10 font-light indent-sm text-gray-700 leading-loose md:font-normal">
+                <ReactMarkdown children={content} className="markdown-body"/>
             </div>
             <div className="pt-6 border-t-2 border-gray-300 leading-relaxed">
                 <p>标签：<span className="text-gray-500">{cur_article.tags}</span></p>
