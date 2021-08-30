@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import {articles} from "../assets/articles";
 import Pagination from "./Pagination";
 import { useState } from "react";
+import test from '../assets/test.json';
 const re_articles=[...articles].reverse();
 function Articles(){
+    console.log(test);
     const [page,setPage]=useState(1);   
     
     const handlePage=(page_)=>{
