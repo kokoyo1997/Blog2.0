@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { quotation } from "../assets/quotations";
 const bgcolor=["#DFDBE5","#DEE5DB","#e5dbdb","#d9b9b9","#e5e4bc"]
+
 function Quotation(){
     const [number,setNumber]=useState(0);
 

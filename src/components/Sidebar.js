@@ -4,7 +4,7 @@ import { articles,reads } from "../assets/articles";
 import Calendar from "./Calendar";
 function Sidebar({slogan}){
     return (
-        <div className="w-60 mb-6 mt-8 hidden lg:block self-start">
+        <div className="w-60 mb-6 mt-8 hidden xl:block self-start">
             <div className="text-gray-400 font-light mb-6">
                 {slogan.map((ele,idx)=>(
                     <p className="leading-8" key={idx}>{ele}</p>
