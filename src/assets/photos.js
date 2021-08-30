@@ -5,7 +5,7 @@ export const photoLists = [{
                 id: 1,
                 title: "大天狗",
                 path: "/uploads/lasted1.jpg",
-                url: "/"
+                url: "/album/1"
             },
             {
                 id: 2,
@@ -90,3 +90,47 @@ export const imageLists = [{
 
     }
 ]
+
+export const albums={
+    "yys":{
+        1:[
+            {
+                id: 1,
+                title: "yys3",
+                path: "/uploads/albums/1/1/home5.jpg"
+            },
+            {
+                id: 2,
+                title: "yys3",
+                path: "/uploads/albums/1/1/img-c1.jpg"
+            },
+            {
+                id: 3,
+                title: "yys3",
+                path: "/uploads/albums/1/1/img-c2.jpg"
+            },
+            {
+                id: 4,
+                title: "yys3",
+                path: "/uploads/albums/1/1/img-c3.jpg"
+            },
+            {
+                id: 5,
+                title: "yys3",
+                path: "/uploads/albums/1/1/img-c4.jpg"
+            },
+            {
+                id: 6,
+                title: "yys3",
+                path: "/uploads/albums/1/1/img-c5.jpg"
+            },
+            {
+                id: 7,
+                title: "yys3",
+                path: "/uploads/albums/1/1/img-c6.jpg"
+            },
+            
+        ]
+    }
+}
+

@@ -6,6 +6,7 @@ import Game from "./Game";
 import About from "./About";
 import Home from "./Home";
 import Quotation from "./Quotation";
+import Album from "./Album";
 // import {REPO} from "../assets/common";
 function Main(){
     return (
@@ -13,6 +14,9 @@ function Main(){
             <Switch>
                 <Route path={[`/photos`,`/articles`,`/article`,`/reads`,`/read`]}>
                     <ContentList />
+                </Route>
+                <Route path={`/album/:id`}>
+                    <Album />
                 </Route>
                 <Route path={`/quotation`}>
                     <Quotation />
