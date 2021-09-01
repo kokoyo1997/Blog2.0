@@ -12,11 +12,11 @@ function Main(){
     return (
         <div className="flex flex-grow box-border">
             <Switch>
-                <Route path={[`/photos`,`/articles`,`/article`,`/reads`,`/read`]}>
-                    <ContentList />
-                </Route>
-                <Route path={`/album/:id`}>
+                <Route path={`/albums/:zone/:id`}>
                     <Album />
+                </Route>
+                <Route path={[`/albums`,`/articles`,`/article`,`/reads`,`/read`]}>
+                    <ContentList />
                 </Route>
                 <Route path={`/quotation`}>
                     <Quotation />

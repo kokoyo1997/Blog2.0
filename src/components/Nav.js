@@ -12,7 +12,7 @@ const navList=[
         key:2,
         nav_name:"照片",
         nav_name_en:"Photos",
-        url:"/photos",
+        url:"/albums",
         icon:"&#xe7f4;"
     },
     {

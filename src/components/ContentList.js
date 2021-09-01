@@ -13,7 +13,7 @@ function ContentList(){
     return (
         <div className="xl:flex container mx-auto flex-grow my-6 space-x-10 px-4">
             <Switch>
-                <Route path={`/photos`}>
+                <Route path={[`/albums/:zone`,`/albums`]}>
                     <Photos />
                     <Sidebar slogan={SLOGAN.PHOTO}/>
                 </Route>

@@ -36,7 +36,7 @@ function Read(){
     }
 
     return (
-        <div className="flex-1 box-border">
+        <div className="flex-1 box-border mt-4">
             <div>
                 <h3 className="text-3xl font-medium tracking-wider mb-4">{cur_article.title}</h3>
                 <div className="flex space-x-6 text-gray-500 font-light text-xs md:text-base mb-2">
@@ -45,8 +45,8 @@ function Read(){
                     <p><span className="iconfont mr-1 align-top">&#xe82c;</span>{timeStr}</p>
                 </div>
                 <div className="flex justify-between py-2 border-gray-300 border-t border-b text-gray-500">
-                    <Link to={`/read/${cur_article.prevId?cur_article.prevId:cur_article.id}`} className={`${cur_article.prevId?"":"cursor-not-allowed"}`}>上一篇</Link>
-                    <Link to={`/read/${cur_article.nextId?cur_article.nextId:cur_article.id}`} className={`${cur_article.nextId?"":"cursor-not-allowed"}`}>下一篇</Link>
+                    <Link to={`/read/${cur_article.nextId?cur_article.nextId:cur_article.id}`} className={`${cur_article.nextId?"":"cursor-not-allowed"}`}>上一篇</Link>
+                    <Link to={`/read/${cur_article.prevId?cur_article.prevId:cur_article.id}`} className={`${cur_article.prevId?"":"cursor-not-allowed"}`}>下一篇</Link>
                 </div>
             </div>
             <div className="my-6 md:my-10 font-light indent-sm text-gray-700 leading-loose md:font-normal">

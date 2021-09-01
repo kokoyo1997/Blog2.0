@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useParams, Redirect, Link } from 'react-router-dom';
 import { REPO } from "../assets/common";
 import { albums } from '../assets/photos';
 
@@ -30,8 +31,9 @@ const trottle=(fn,wait)=>{
     }
 }
 function Album(){
-
     const [cols,setCols]=useState(2);
+
+    const params=useParams();  
 
     const handleResize=()=>{
         let w=window.innerWidth;
@@ -47,9 +49,18 @@ function Album(){
         return ()=>{
             window.removeEventListener("resize",trottle(handleResize,500));
         }
-    },[])
+    },[]);
 
-    let img_list=generate(cols,albums["yys"][1]);
+    let album=albums[params.zone];
+    if(album===undefined){
+        return <Redirect to={{pathname:'/photos'}}/>
+    }
+    let imgs=album[params.id];
+    if(imgs===undefined){
+        return <Redirect to={{pathname:'/photos'}}/>
+    }
+
+    let img_list=generate(cols,imgs["list"]);
     
     return (
         <div className="container mx-auto my-8 border-dashed border border-gray-400 shadow-lg">
@@ -60,7 +71,12 @@ function Album(){
                     <li className="w-3 h-3 rounded-full bg-green-500 shadow-xl"></li>
 
                 </ul>
-                <p className=" font-semibold text-gray-200">照片/阴阳师/1</p>
+                <p className="font-semibold text-gray-200 space-x-1">
+                    <Link to={`/albums`} className="hover:underline">照片</Link>
+                    <span>/</span>
+                    <Link to={`/albums/${params.zone}`} className="hover:underline">{album.title}</Link>
+                    <span>/&nbsp;{imgs.title}</span>
+                </p>
             </div>
             <div className="flex space-x-2 m-6">
                 {
@@ -68,7 +84,7 @@ function Album(){
                         <div className={`flex flex-col space-y-2 flex-1 lg:flex-${Math.floor(Math.random()*2)+1}`} key={idx}>
                             {
                                 col.map((ele,idx_)=>(
-                                    <img src={REPO+ele.path} className="shadow-md" key={idx_} alt="pad"/>
+                                    <img src={REPO+ele.path} className="shadow-md" key={idx_} alt={ele.name}/>
                                 ))
                             }
                         </div>
