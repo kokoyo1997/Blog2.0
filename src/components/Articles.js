@@ -16,7 +16,7 @@ function Articles(){
     let cur_articles=re_articles.slice((page-1)*5,Math.min(re_articles.length,page*5));
 
     return (
-        <div className="flex-1 box-border relative">
+        <div className="flex-1 box-border relative pb-1 md:pb-2">
             <ul className="flex flex-col mt-6 space-y-4 mb-20 md:mt-10 md:space-y-6">
                 {cur_articles.map((ele)=>(
                     <li className={`flex space-x-4 shadow-sm py-5 px-4 rounded-r-lg bg-contain bg-right bg-no-repeat bg-gray-100 ${"md:bg-imglabel"+Math.floor(Math.random()*13+1)}`} key={ele.id}>
