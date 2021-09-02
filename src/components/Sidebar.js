@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { REPO } from "../assets/common";
-import { articles,reads } from "../assets/articles";
+import articles from "../assets/articles.json";
+import reads from "../assets/reads.json";
 // import Calendar from "./Calendar";
 function Sidebar({slogan}){
     return (

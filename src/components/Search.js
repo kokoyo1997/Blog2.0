@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {articles,reads} from "../assets/articles";
+import articles from "../assets/articles.json";
+import reads from "../assets/reads.json";
 
 const search=(target)=>{
     let res=[];
