@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {articles} from "../assets/articles";
+import articles from "../assets/articles.json";
 import Pagination from "./Pagination";
 import { useState } from "react";
 

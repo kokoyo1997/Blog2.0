@@ -196,7 +196,7 @@ function Todo(){
                                 <li key={ele.id} className="flex justify-between ml-6  py-1 space-x-4 bg-gray-50 border-l-2 border-red-600 rounded-sm">
                                     <p className="truncate text-gray-700">
                                         <span className="iconfont text-gray-400 mx-1">&#xe83d;</span>
-                                        {ele.content}
+                                        <span className="line-through">{ele.content}</span>
                                     </p>
                                     <div className="space-x-1 text-gray-400 pr-1">
                                         <span onClick={()=>handleStatusChange(ele.id,DOING)} className="iconfont hover:text-red-300 cursor-pointer">&#xe82d;</span>

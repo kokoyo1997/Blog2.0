@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {reads} from "../assets/articles";
+import reads from "../assets/reads.json";
 import { REPO } from "../assets/common";
 import Pagination from "./Pagination";
 import { useState } from "react";
@@ -20,7 +20,7 @@ function Reads(){
                 {cur_articles.map((ele)=>(
                     <li className="flex space-x-4" key={ele.id}>
                         <div className="hidden md:block w-2/5 pb-3/10 lg:w-80 lg:pb-0 lg:h-60 relative">
-                            <img src={REPO+ele.imgUrl} alt={ele.title} className="absolute w-full border"/>
+                            <img src={REPO+ele.imgUrl} alt={ele.title} className="absolute w-full  h-full border object-cover"/>
                             <div className="bg-imgmask bg-cover w-full h-full absolute"></div>
                         </div>
                         

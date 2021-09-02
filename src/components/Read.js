@@ -1,5 +1,5 @@
 import { Link, Redirect, useParams } from "react-router-dom";
-import {reads} from "../assets/articles";
+import reads from "../assets/reads.json";
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from "react";
 import 'github-markdown-css';
