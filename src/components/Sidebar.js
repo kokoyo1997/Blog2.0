@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { REPO } from "../assets/common";
 import { articles,reads } from "../assets/articles";
-import Calendar from "./Calendar";
+// import Calendar from "./Calendar";
 function Sidebar({slogan}){
     return (
         <div className="w-60 mb-6 mt-8 hidden xl:block self-start">
-            <Calendar />
+            {/* <Calendar /> */}
             
             <div className="text-gray-400 font-light mb-6">
                 {slogan.map((ele,idx)=>(

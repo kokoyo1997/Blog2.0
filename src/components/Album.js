@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Redirect, Link } from 'react-router-dom';
-import { REPO } from "../assets/common";
+import { IMGPAD, REPO } from "../assets/common";
 import { albums } from '../assets/photos';
+import useImageLazy from './useImageLazy';
 
 const generate=(cols,imgs)=>{
     let arr=new Array(cols).fill(null).map(()=>[]);
@@ -35,6 +36,9 @@ function Album(){
 
     const params=useParams();  
 
+    const domRef=useRef([]);
+    useImageLazy(domRef.current);
+
     const handleResize=()=>{
         let w=window.innerWidth;
         if(w<768) setCols(2);
@@ -44,7 +48,7 @@ function Album(){
     }
 
     useEffect(()=>{
-        handleResize()
+        handleResize();
         window.addEventListener('resize',trottle(handleResize,500));
         return ()=>{
             window.removeEventListener("resize",trottle(handleResize,500));
@@ -81,10 +85,10 @@ function Album(){
             <div className="flex space-x-2 m-6">
                 {
                     img_list.map((col,idx)=>(
-                        <div className={`flex flex-col space-y-2 flex-1 lg:flex-${Math.floor(Math.random()*2)+1}`} key={idx}>
+                        <div className={`flex flex-col space-y-2 flex-1`} key={idx}>
                             {
                                 col.map((ele,idx_)=>(
-                                    <img src={REPO+ele.path} className="shadow-md" key={idx_} alt={ele.name}/>
+                                    <img data-src={REPO+ele.path} src={REPO+IMGPAD} ref={el=>domRef.current[img_list[0].length*idx+idx_]=el} className="shadow-md" key={idx_} alt={ele.name}/>
                                 ))
                             }
                         </div>

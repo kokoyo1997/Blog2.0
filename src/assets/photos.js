@@ -37,10 +37,10 @@ export const albums={
     "yys":{
         id:1,
         title:"阴阳师Onmyoji", //分区名字
-        lists:["1"], //和下面的相册同步
+        lists:["1"], //和下面的相册键名同步
         1:{
             id:100,
-            title:"1", //单个相册名字
+            title:"测试", //单个相册名字
             cover:"/uploads/lasted1.jpg", //相册封面
             url: "/albums/yys/1", //封面图片地址
             list:[
@@ -78,6 +78,41 @@ export const albums={
                     id: 7,
                     name: "yys3",
                     path: "/uploads/albums/1/1/img-c6.jpg"
+                },
+                {
+                    id: 8,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c7.jpg"
+                },
+                {
+                    id: 9,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c8.jpg"
+                },
+                {
+                    id: 10,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c9.jpg"
+                },
+                {
+                    id: 11,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c10.jpg"
+                },
+                {
+                    id: 12,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c11.jpg"
+                },
+                {
+                    id: 13,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c12.jpg"
+                },
+                {
+                    id: 14,
+                    name: "yys3",
+                    path: "/uploads/albums/1/1/img-c13.jpg"
                 },
                 
             ]

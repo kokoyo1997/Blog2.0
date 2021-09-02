@@ -1,4 +1,5 @@
 export const REPO="/Blog2.0";
+export const IMGPAD="/img/cover.jpeg";
 
 export const ABOUT=[
     "1. 一条腐烂的咸鱼",
