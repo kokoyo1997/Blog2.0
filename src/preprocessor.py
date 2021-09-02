@@ -1,6 +1,4 @@
-from json.encoder import JSONEncoder
 import os
-from typing import Mapping
 import json
 import datetime
 #    defaults={
@@ -38,8 +36,7 @@ def obtainInfo(file,root):
     else:
         file_info["abstract"]=""
     contents=''.join(contents)
-   
-    # contents=contents.rstrip()
+
     cnt_cn=0
     for s in contents:
     # 中文字符数量
@@ -57,37 +54,22 @@ def obtainInfo(file,root):
     file_info["id"]=-1
     file_info["imgUrl"]="/img/cover.jpeg"
 
-
     return file_info
 
 def getJSON(file):
     with open(file,'r',encoding="utf-8") as load_f:
         load_dict = json.load(load_f)
     
-    articles=load_dict.get("articles",[])
-    reads=load_dict.get("reads",[])
+    m=dict()
+    id_title_m=dict()
+    lasted_id=0
 
-    m_art=dict()
-    m_read=dict()
+    for article in load_dict:
+        m[article["title"]]=article
+        id_title_m[article["id"]]=article["title"]
+        lasted_id=max(lasted_id,article["id"])
 
-    id_title_m_a=dict()
-    id_title_m_r=dict()
-
-    lasted_id_a=0
-    lasted_id_r=0
-
-    for article in articles:
-        m_art[article["title"]]=article
-        id_title_m_a[article["id"]]=article["title"]
-        lasted_id_a=max(lasted_id_a,article["id"])
-   
-    for r in reads:
-        m_read[r["title"]]=r
-        id_title_m_r[r["id"]]=r["title"]
-        lasted_id_r=max(lasted_id_r,r["id"])
-
-
-    return articles,reads,m_art,m_read,lasted_id_a,lasted_id_r,id_title_m_a,id_title_m_r
+    return load_dict,m,lasted_id,id_title_m
 
 def compare(x):
     return os.path.getctime(x)
@@ -117,21 +99,14 @@ def helper(source,lists,m,lasted,id2tit):
 
 def updateJSON(source,target):
     print("start...")
-    articles,reads,m_art,m_read,id_a,id_r,id2tit_a,id2tit_r=getJSON(target)
-
-    dump_dict={}
-    articles=helper(source+"\\articles",articles,m_art,id_a,id2tit_a)
-    reads=helper(source+"\\reads",reads,m_read,id_r,id2tit_r)
-    
-    dump_dict["articles"]=articles
-    dump_dict["reads"]=reads
-    # print(dump_dict)
+    lists,m,lasted_id,id2tit=getJSON(target)
+    dump=helper(source,lists,m,lasted_id,id2tit)
 
     print("writing...")
     with open(target,'w',encoding="utf-8") as dump_f:
-        json.dump(dump_dict,dump_f)
+        json.dump(dump,dump_f)
 
     print("over")
 
-updateJSON("blog_2.0\\public","blog_2.0\\src\\assets\\test.json")
-# getJSON("blog_2.0\\src\\assets\\test.json")
+updateJSON("blog_2.0\\public\\articles","blog_2.0\\src\\assets\\articles.json")
+updateJSON("blog_2.0\\public\\reads","blog_2.0\\src\\assets\\reads.json")
