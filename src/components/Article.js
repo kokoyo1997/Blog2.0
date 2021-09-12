@@ -26,15 +26,22 @@ function Article(){
     }
     
     cur_article=cur_article[0];
+    
     let now=new Date(),timestamp=new Date(cur_article.timestamp);
     let timeDelta=Math.floor((now.getTime()-timestamp.getTime())/(24*60*60*1000));
-    
+    let timeStr;
+    if(timeDelta<10){
+        if(timeDelta===0) timeStr="今天";
+        else timeStr=`${timeDelta}天前`
+    }else{
+        timeStr=cur_article.timestamp;
+    }
 
     return (
         <div className="flex-1 box-border">
             <div className="text-sm my-4 border-b border-gray-500 pb-1 inline-block space-x-1">
                 <span className="iconfont cursor-pointer hover:opacity-50 align-bottom" onClick={()=>{history.goBack()}}>&#xe82d;</span>
-                <span className="hover:underline cursor-pointer">文章</span>
+                <Link to={`/articles`} className="hover:underline cursor-pointer">文章</Link>
                 <span>/&nbsp;{cur_article.title}</span>
 
             </div>
@@ -43,7 +50,7 @@ function Article(){
                 <div className="flex space-x-6 text-gray-500 font-light text-xs md:text-base mb-2">
                     <p><span className="iconfont mr-1 align-middle">&#xe7f1;</span>{cur_article.consume}min</p>
                     <p><span className="iconfont mr-1 align-middle">&#xe845;</span>{content.length}</p>
-                    <p><span className="iconfont mr-1 align-middle">&#xe82c;</span>{timeDelta}天前</p>
+                    <p><span className="iconfont mr-1 align-middle">&#xe82c;</span>{timeStr}</p>
                 </div>
                 <div className="flex justify-between py-2 border-gray-300 border-t border-b text-gray-500">
                     <Link to={`/article/${cur_article.nextId?cur_article.nextId:cur_article.id}`} className={`${cur_article.nextId?"":"cursor-not-allowed"}`}>上一篇</Link>
