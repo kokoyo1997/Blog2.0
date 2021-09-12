@@ -88,7 +88,7 @@ function Album(){
                         <div className={`flex flex-col space-y-2 flex-1`} key={idx}>
                             {
                                 col.map((ele,idx_)=>(
-                                    <img data-src={REPO+ele.path} src={REPO+IMGPAD} ref={el=>domRef.current[img_list[0].length*idx+idx_]=el} className="shadow-md" key={idx_} alt={ele.name}/>
+                                    <img data-src={REPO+ele.path} src={REPO+IMGPAD} ref={el=>domRef.current[img_list[0].length*idx+idx_]=el} className="shadow-md" key={idx_} alt={ele.name} title={ele.name}/>
                                 ))
                             }
                         </div>
