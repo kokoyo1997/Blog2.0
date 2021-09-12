@@ -108,5 +108,10 @@ def updateJSON(source,target):
 
     print("over")
 
-updateJSON("blog_2.0\\public\\articles","blog_2.0\\src\\assets\\articles.json")
-updateJSON("blog_2.0\\public\\reads","blog_2.0\\src\\assets\\reads.json")
+# updateJSON("blog_2.0\\public\\articles","blog_2.0\\src\\assets\\articles.json")
+# updateJSON("blog_2.0\\public\\reads","blog_2.0\\src\\assets\\reads.json")
+cur_path=os.path.dirname(__file__)
+parent_path=cur_path+os.path.dirname(cur_path)
+
+# updateJSON(parent_path+"\\public\\articles",cur_path+"\\assets\\articles.json")
+updateJSON("..\\public\\reads","assets\\reads.json")

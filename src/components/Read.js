@@ -32,7 +32,7 @@ function Read(){
         if(timeDelta===0) timeStr="今天";
         else timeStr=`${timeDelta}天前`
     }else{
-        timeStr=timestamp;
+        timeStr=cur_article.timestamp;
     }
 
     return (
