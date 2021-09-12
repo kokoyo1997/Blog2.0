@@ -1,7 +1,7 @@
 ## 排序算法
 常见的排序算法如下
 
-![sort](sort.png)
+![sort](../uploads/articles/sort.png)
 
 [多写几次强化记忆](https://leetcode-cn.com/problems/sort-an-array/)
 
